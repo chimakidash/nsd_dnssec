@@ -1,0 +1,2 @@
+DOMAIN="domain.tld"
+ldns-signzone -n -p -s "$(head /dev/urandom | tr -dc A-Za-z0-9 | sha1sum | head -c 30)" -f "db.${DOMAIN}.signed" "db.${DOMAIN}" "K${DOMAIN}.zsk" "K${DOMAIN}.ksk"
